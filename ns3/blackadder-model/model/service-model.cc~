@@ -32,7 +32,7 @@ namespace ns3 {
 ServiceModel::ServiceModel() {
 double min = 0.0;
 double max = 65536.0;
-m_pid_generator = CreateObject<UniformRandomVariable> ();
+Ptr<UniformRandomVariable> m_pid_generator = CreateObject<UniformRandomVariable> ();
 m_pid_generator->SetAttribute ("Min", DoubleValue(min));
 m_pid_generator->SetAttribute ("Max", DoubleValue(max));
     }

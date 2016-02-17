@@ -41,7 +41,7 @@ namespace ns3 {
     ClickBridge::~ClickBridge() {
     }
 
-    void ClickBridge::DoInitialize(void) {
+    void ClickBridge::DoStart(void) {
         NS_LOG_FUNCTION(this);
         RegisterReceiver();
         uint32_t id = GetObject<Node > ()->GetId();

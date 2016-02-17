@@ -1,7 +1,9 @@
 ## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
 
 import os
-import Options
+#import Options
+
+from waflib import TaskGen, Task, Options, Build, Utils
 
 
 def options(opt):
@@ -114,7 +116,8 @@ def build(bld):
         module.use.extend(['NSCLICK', 'DL'])
         module_test.use.extend(['NSCLICK', 'DL'])
 
-    headers = bld.new_task_gen(features=['ns3header'])
+#    headers = bld.new_task_gen(features=['ns3header'])
+    headers = bld(features=['ns3header'])
     headers.module = 'blackadder'
     headers.source = [
         'model/click-bridge.h',
@@ -127,6 +130,7 @@ def build(bld):
         ]
 
     if (bld.env['ENABLE_EXAMPLES']):
-        bld.add_subdirs('examples')
+#        bld.add_subdirs('examples')
+        bld.recurse('examples')
 
     #bld.ns3_python_bindings()

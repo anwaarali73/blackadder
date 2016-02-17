@@ -177,8 +177,7 @@ namespace ns3 {
         /**
          * @brief It is called when the simulated object is started. It registers a callback to ClickBridge to receive all events, that must be routed to NS3 applications, by Blackadder.
          */
-//        void DoStart(void);
-        void DoInitialize(void);
+        void DoStart(void);
         void DoDispose(void);
         /**
          * @brief The same call is in Blackadder's library. The only difference is the process identifier which must be explicitly passed as an argument

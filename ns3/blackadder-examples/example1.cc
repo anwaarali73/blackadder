@@ -31,7 +31,8 @@ main(int argc, char *argv[]) {
 
     Ptr<ClickBridge> click0 = CreateObject<ClickBridge > ();
     nodes.Get(0)->AggregateObject(click0);
-    click0->SetClickFile("/home/pursuit/ns-allinone-3.14.1/ns-3.14.1/examples/blackadder-examples/test.click");
+//    click0->SetClickFile("/home/pursuit/ns-allinone-3.14.1/ns-3.14.1/examples/blackadder-examples/test.click");
+    click0->SetClickFile("/home/cplab/ns3/ns-allinone-3.24/ns-3.24/examples/blackadder/test.click");
     Ptr<ServiceModel> servModel0 = CreateObject<ServiceModel > ();
     nodes.Get(0)->AggregateObject(servModel0);
 
@@ -48,7 +49,8 @@ main(int argc, char *argv[]) {
     Ptr<TopologyManager> tm = CreateObject<TopologyManager > ();
     tm->SetStartTime(Seconds(0.));
     tm->SetStopTime(Seconds(20));
-    tm->SetAttribute("Topology", StringValue("/home/pursuit/topology.graphml"));
+//    tm->SetAttribute("Topology", StringValue("/home/pursuit/topology.graphml"));
+    tm->SetAttribute("Topology", StringValue("/home/cplab/topology.graphml"));
     nodes.Get(0)->AddApplication(tm);
 
     Simulator::Run();

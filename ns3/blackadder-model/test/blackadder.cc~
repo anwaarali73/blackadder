@@ -48,8 +48,7 @@ public:
 
 BlackadderTestSuite::BlackadderTestSuite (): TestSuite ("blackadder test suite", UNIT)
 {
-//  AddTestCase (new BlackadderTest);
-  AddTestCase (new BlackadderTest, TestCase::QUICK);
+  AddTestCase (new BlackadderTest);
 }
 
 static BlackadderTestSuite g_blackadderTestSuite;

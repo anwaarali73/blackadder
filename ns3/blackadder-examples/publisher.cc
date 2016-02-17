@@ -33,10 +33,12 @@ namespace ns3 {
     Publisher::~Publisher() {
     }
 
-    void Publisher::DoStart(void) {
+//    void Publisher::DoStart(void) {
+    void Publisher::DoInitialize(void) {
         NS_LOG_FUNCTION(this);
         m_cb = MakeCallback(&Publisher::EventHandler, this);
-        PubSubApplication::DoStart();
+//        PubSubApplication::DoStart();
+        PubSubApplication::DoInitialize();
     }
 
     void Publisher::DoDispose(void) {
@@ -65,7 +67,8 @@ namespace ns3 {
         NS_LOG_FUNCTION(this);
         NS_ASSERT(m_Event.IsExpired());
         std::string prefix_id = "0000000000000000";
-        UniformVariable part1;
+//        UniformVariable part1;
+        UniformRandomVariable part1;
         double d1;
         char *testID = (char *) malloc(8);
         d1 = part1.GetValue();
